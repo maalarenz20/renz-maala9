@@ -1,0 +1,258 @@
+/* ===== RESET & GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #f8fafc;          /* Malinis at maputi/light gray background */
+    --second-bg-color: #ffffff;   /* Pure white para sa mga cards at boxes */
+    --text-color: #1e293b;        /* Madilim na kulay ng text para malinaw basahin */
+    --main-color: #0d9488;        /* Matingkad na Teal accent */
+    --accent-color: #d97706;      /* Warm Amber accent para sa highlights */
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 80vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* ===== HEADER & NAVBAR ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: rgba(248, 250, 252, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+/* ===== HERO SECTION ===== */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+}
+
+.home-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3 span {
+    color: var(--accent-color);
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 1rem 0;
+    color: #0f172a;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    max-width: 600px;
+    margin: 1rem auto 3rem;
+    color: #64748b;
+}
+
+/* ===== ABOUT SECTION (May kasamang Image sa gitna) ===== */
+.about {
+    background: var(--second-bg-color);
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.about-content {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+}
+
+.about-content p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #64748b;
+}
+
+/* Istilo ng Image sa About Section na naka-center */
+.about-img {
+    width: 25vw;
+    max-width: 260px;
+    min-width: 180px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--main-color);
+    box-shadow: 0 10px 25px rgba(13, 148, 136, 0.15);
+    margin: 0 auto; /* Tinitiyak na laging nasa gitna */
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.about-img img:hover {
+    transform: scale(1.05);
+}
+/* Responsive para sa Mobile */
+@media (max-width: 991px) {
+    .home {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 12rem;
+    }
+
+    .home-content {
+        text-align: center;
+    }
+
+    .home-img {
+        width: 60vw;
+        max-width: 260px;
+    }
+}
+
+/* Button Component */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+    font-size: 1.6rem;
+    color: #fff;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.btn:hover {
+    background: #0f766e;
+    box-shadow: none;
+    transform: scale(1.05);
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+    background: var(--second-bg-color);
+    text-align: center;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.heading {
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+.about-content p {
+    font-size: 1.8rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #64748b;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services {
+    background: var(--bg-color);
+    text-align: center;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.services-box {
+    background: var(--second-bg-color);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: 0.3s ease;
+}
+
+.services-box:hover {
+    border-color: var(--main-color);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(13, 148, 136, 0.1);
+}
+
+.services-box i {
+    font-size: 4rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.services-box h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
